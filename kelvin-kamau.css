@@ -1,0 +1,174 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-size: 22px;
+    line-height: 33px;
+}
+a{
+    text-decoration: none;
+}
+.preloader{
+    position: fixed;
+    top:0;
+    left:0;
+    right: 0;
+    bottom:0;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    visibility:visible;
+    z-index:100;
+}
+.hide-preloader{
+    visibility:hidden;
+    z-index:-99;
+}
+.links{
+    list-style-type: none;
+    margin:0 0.2rem;
+}
+
+.menu{
+    visibility: hidden;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding:0.5rem;
+}
+.links-container{
+    display: flex;
+    align-items: center;
+}
+#home,#about,#photos,#contact{
+    height:100vh;
+    width:100%;
+}
+h2{
+    text-align: center;
+}
+#about img{
+    height:25rem;
+    width:30rem;
+    float: left;
+    padding:1rem;
+}
+span{
+    color:blue;
+}
+.banner{
+    height:100vh;
+    display: grid;
+    align-items: center;
+    place-items: center;
+    text-align: center;
+}
+.banner a{
+    padding:0.12rem;
+    border:2px solid blue;
+    background:transparent;
+}
+.top{
+    position: fixed;
+    bottom:7%;
+    right:7%;
+    background:blue;
+    padding:0.2rem;
+    color:white;
+}
+.photo-container{
+    width:100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+}
+.img{
+    height:20rem;
+    width:auto;
+}
+figure{
+    text-align: center;
+}
+.btn-container{
+    margin:0.5rem;
+}
+button{
+    padding:0.2rem;
+}
+footer{
+    text-align: center;
+}
+
+@media(max-width:500px){
+    body{
+        min-height:100vh;
+        min-width:100%;
+        font-size:18px;
+        line-height: 22px;
+    }
+    *{
+        box-sizing: border-box;
+    }
+    #about{
+        padding:0 0.4rem;
+    }
+    #about a{
+        font-style: italic;
+    }
+    #about img{
+        height:8rem;
+        width:8rem;
+        border-radius: 50%;
+        float: left;
+    }
+    .nav{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width:100vw;
+       
+    }
+    .links-container{
+        flex-direction: column;
+        align-items: flex-start;
+        display: none;
+    }
+    .show-links{
+        display: block;
+    }
+    h1{
+        font-size:20px;
+    }
+    h2{
+        font-size: 18px;
+       
+    }
+   
+    .menu{
+        visibility: visible;
+    }
+    .sub{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width:100%;
+        
+    }
+    .links{
+        margin:0;
+    }
+    .img{
+        height:20rem;
+        width:auto;
+    }
+}
