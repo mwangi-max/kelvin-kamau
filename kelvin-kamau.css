@@ -52,14 +52,25 @@ a{
     height:100vh;
     width:100%;
 }
+.sub{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;
+    
+}
 h2{
     text-align: center;
 }
 #about img{
-    height:25rem;
-    width:30rem;
-    float: left;
+    height:20rem;
+    width:auto;
     padding:1rem;
+}
+.main{
+    display: grid;
+    grid-template-columns: 0.5fr auto;
 }
 span{
     color:blue;
@@ -104,6 +115,14 @@ figure{
 button{
     padding:0.2rem;
 }
+.contacts{
+    height:100%;
+    width:100%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+ }
 footer{
     text-align: center;
 }
@@ -125,10 +144,8 @@ footer{
         font-style: italic;
     }
     #about img{
-        height:8rem;
-        width:8rem;
-        border-radius: 50%;
-        float: left;
+        height:10rem;
+        width:auto;
     }
     .nav{
         display: flex;
@@ -156,14 +173,10 @@ footer{
     .menu{
         visibility: visible;
     }
-    .sub{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        width:100%;
-        
+    .main{
+        display: block;
     }
+   
     .links{
         margin:0;
     }
