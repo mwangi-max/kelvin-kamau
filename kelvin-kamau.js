@@ -43,6 +43,14 @@ const prevBtn = document.querySelector('.prev-btn');
 const img = document.querySelector('.img');
 const author = document.querySelector('.name');
 const info = document.querySelector('.info');
+const nav = document.querySelector('.nav');
+const showTop = document.querySelector('.top');
+
+const scrollLinks = document.querySelectorAll('.links');
+console.log(scrollLinks)
+
+
+
 
 
 
@@ -55,6 +63,7 @@ window.addEventListener('load', hidePreloader);
 menu.addEventListener('click', showMenu);
 nextBtn.addEventListener('click', showNext);
 prevBtn.addEventListener('click', showPrev);
+window.addEventListener('scroll', showNav);
 
 
 
@@ -102,3 +111,50 @@ function showPrev(){
     }
     nextImage();
 }
+function showNav(){
+    let navHeight = nav.getBoundingClientRect().height;
+    let navPosition = nav.getBoundingClientRect().top;
+    let scrollHeight = window.scrollY;
+ if(scrollHeight > navHeight){
+    nav.classList.add('fixed');
+ }
+ else{
+    nav.classList.remove('fixed');
+ }
+
+ if(scrollHeight > 600){
+    showTop.classList.add('show-top-nav');
+ }
+ else{
+    showTop.classList.remove('show-top-nav');
+ }
+
+}
+scrollLinks.forEach(function(link){
+    link.addEventListener('click', function(e){
+        e.preventDefault();
+
+        let fixedNav = nav.classList.contains('fixed');
+    
+        let navHeight = nav.getBoundingClientRect().height;
+        let id = e.currentTarget.getAttribute('href');
+        console.log(id);
+        let element = document.getElementById(id);
+        let linksHeight = linksContainer.getBoundingClientRect().height;
+        let topPosition = element.offsetTop;
+        console.log(topPosition)
+        // topPosition = topPosition - navHeight;
+        // if(!fixedNav){
+        //     topPosition = topPosition - navHeight;
+        // }
+        // if(navHeight > 88){
+        //     topPosition = topPosition + navHeight;
+        // }
+        window.scrollTo({
+            left:0,
+            top:topPosition,
+        });
+        linksContainer.classList.remove('show-links'); 
+    })
+})
+
